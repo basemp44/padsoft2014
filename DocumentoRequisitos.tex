@@ -1,0 +1,109 @@
+%! program = pdflatex
+
+%\documentclass[12pt,a4paper]{memoir} % for a long document
+\documentclass[12pt,a4paper,article]{memoir} % for a short document
+
+\usepackage[utf8]{inputenc}
+
+
+% See the ``Memoir customise'' template for some common customisations
+% Don't forget to read the Memoir manual: memman.pdf
+
+\title{Entrega 1 PADSOFT}
+\author{M. Blanc, V. Macias}
+\date{} % Delete this line to display the current date
+
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+\tableofcontents* % the asterisk means that the contents itself isn't put into the ToC
+
+\chapter{Cobros}
+
+Cobro por efectivo o tarjeta.
+
+Tarifa plana
+35
+15
+25
+5€ retrasos de 1 dia
+
+Tarifa plana premium para los 3
+
+3 dias (naturales, enteros) / articulo
+3 articulos simultaneamente / persona
+No se puede alquilar mientras tengas algo
+
+\chapter{Usuarios}
+Minimo, un nivel de permisos: 
+* Administrador: configuracion (persistente):
+* Precios
+* Articulos
+* Empleados marcar como no disponible
+
+Los socios tienen:
+* UID
+* Nombre
+* DNI
+* Direccion
+* Telefono
+* Mail
+
+DEBE funcionar en Windows
+
+\chapter{Vistas}
+Top-ten (solo admin!)
+Lista de morosos
+Lista de alquiler de películas
+
+\chapter{Inventario}
+
+Peliculas:  5000
+Series:     500
+Musica:     3000
+
+Se prestan peliculas, musica y series.
+Peliculas tienen:
+* Titulo
+* Año
+* Categorias
+* Director
+* Nº ejemplares
+* Formato (DVD/Bluray)
+
+Serie tiene:
+* Titulo
+* Temporada
+* Categorias
+* Volumen
+* Formato (DVD/Bluray)
+
+Temporada >= Volumen >= CD
+
+Musica tiene:
+* Titulo
+* Genero
+* Interprete
+* Año
+* Formato (CD/Vinilo)
+
+Generar estatisticas a partir de alquileres
+
+Penalizacion por retraso (1€ por cada dia), (5€ por cada dia a partir del 10)
+
+\chapter{Opcional}
+Control de desperfectos.
+Encriptacion contraseñas.
+Mantiene informacion sobre las cuentas.
+Venta de peliculas viejas. Dar de baja peliculas.
+IVA.
+Promociones.
+Dar de baja clientes.
+Puntuaciones
+Reservar
+
+%\section{}
+%\subsection{}
+
+\end{document}
