@@ -1,4 +1,3 @@
-
 Cobro por efectivo o tarjeta.
 
 Tarifa plana
@@ -76,8 +75,3 @@ Promociones.
 Dar de baja clientes.
 Puntuaciones
 Reservar
-
-%\section{}
-%\subsection{}
-
-\end{document}
