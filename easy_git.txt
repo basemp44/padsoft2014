@@ -8,4 +8,11 @@ Interfaces graficos de git:
 * Git-Cola: http://git-cola.github.io
 * Git-Eye: http://www.collab.net/giteyeapp
 
+Buenas practicas en git:
+http://sethrobertson.github.io/GitBestPractices/
 
+Ayuda de GitHub:
+https://help.github.com/categories/54/articles
+
+Manual ‘oficial’ de git:
+http://git-scm.com/documentation
