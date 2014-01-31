@@ -1,109 +1,81 @@
-%! program = pdflatex
+%
+% Requisitos.tex - padsoft 2014
+% (c) 2014  M. Blanc, V. Macias
+%
 
-%\documentclass[12pt,a4paper]{memoir} % for a long document
-\documentclass[12pt,a4paper,article]{memoir} % for a short document
+\documentclass[11pt]{article}
 
+% pagina tamaño A4
+\usepackage{geometry}
+\geometry{letterpaper} 
+% español
 \usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+% simbolos de euro
+\usepackage[official]{eurosym}
+\usepackage{newunicodechar}
+\newunicodechar{€}{\euro{}}
+% estilos
+\usepackage{enumitem}
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+\titleformat{\section}{\huge\bfseries}{\thesection}{1em}{}
 
+\title{Documento de análisis de requisitos}
+\author{M. Blanc \texttt{manuel.blanc@estudiante.uam.es} \and V. Macias \texttt{victor.macias@estudiante.uam.es}}
+\date{Viernes 31 de Enero, 2014}
 
-% See the ``Memoir customise'' template for some common customisations
-% Don't forget to read the Memoir manual: memman.pdf
-
-\title{Entrega 1 PADSOFT}
-\author{M. Blanc, V. Macias}
-\date{} % Delete this line to display the current date
-
-%%% BEGIN DOCUMENT
 \begin{document}
 
-\maketitle
-\tableofcontents* % the asterisk means that the contents itself isn't put into the ToC
+\clearpage\maketitle
+\thispagestyle{empty}
+\tableofcontents
 
-\chapter{Cobros}
+\section{Introducción}
+\subsection{Proposito del sistema}
+Qué tiene que hacer la aplicación, por qué hay que construirla.
 
-Cobro por efectivo o tarjeta.
+\subsection{Ámbito del sistema}
+Resumen de lo que el sistema tiene que hacer y qué cosas no tiene que hacer (hasta dónde llega la funcionalidad).
 
-Tarifa plana
-35
-15
-25
-5€ retrasos de 1 dia
+\subsection{Objetivos y criterios de exito del proyecto}
+Objetivos principales del sistema, y criterios que se usarán para decidir si el sistema se ha construido de manera exitosa.
 
-Tarifa plana premium para los 3
+\subsection{Definiciones, acronimos y abreviaturas}
+Lista con términos técnicos y abreviaturas que se usarán en el resto del documento.
 
-3 dias (naturales, enteros) / articulo
-3 articulos simultaneamente / persona
-No se puede alquilar mientras tengas algo
+\section{Descripción del sistema}
+\subsection{Requisitos funcionales}
+Tipos de usuario y descripción de las funciones que puede realizar cada uno de ellos.
+\subsubsection{Tipo de usuario 1}
+\subsubsection{Tipo de usuario 2}
+\subsubsection{Tipo de usuario 3}
 
-\chapter{Usuarios}
-Minimo, un nivel de permisos: 
-* Administrador: configuracion (persistente):
-* Precios
-* Articulos
-* Empleados marcar como no disponible
+\subsection{Requisitos no funcionales}
+Descripción de los requisitos no funcionales, categorizados por tipo (rendimiento, fiabilidad, etc).
 
-Los socios tienen:
-* UID
-* Nombre
-* DNI
-* Direccion
-* Telefono
-* Mail
+\section{Casos de uso}
+\subsection{Diagrama de casos de uso}
+El diagrama de casos de uso del sistema
 
-DEBE funcionar en Windows
+\subsection{Descripcion de los casos de uso}
+Detalle de los casos de uso del sistema (elige al menos 3). Utiliza la siguiente plantilla:
 
-\chapter{Vistas}
-Top-ten (solo admin!)
-Lista de morosos
-Lista de alquiler de películas
+\subsection{Caso de uso NOMBRE}
+\begin{description}[style=nextline]
+\item[Actor primario] ...
+\item[Interesados y objetivos] ...
+\item[Precondiciones] Situación necesaria para que el caso de uso pueda darse
+\item[Garantía de exito (postcondiciones)] ...
+\item[Escenario principal de éxito] Interacciones del escenario, numeradas
+\item[Extensiones (flujos alternativos)] Escenarios excepcionales
+\item[Requisitos especiales] Lista de requisitos, probablemente no funcionales
+\item[Lista de variaciones de tecnología y datos] Lista de distintas opciones teconologias para la funcionalidad del caso de uso
+\item[Frecuencia de ocurrencia] Estimacion (erronea probablemente)
+\item[Temas abiertos] Cuestiones que estan abiertas y se plantean para resolucion futura, o para considerarse en futuras versiones
+\end{description}
 
-\chapter{Inventario}
-
-Peliculas:  5000
-Series:     500
-Musica:     3000
-
-Se prestan peliculas, musica y series.
-Peliculas tienen:
-* Titulo
-* Año
-* Categorias
-* Director
-* Nº ejemplares
-* Formato (DVD/Bluray)
-
-Serie tiene:
-* Titulo
-* Temporada
-* Categorias
-* Volumen
-* Formato (DVD/Bluray)
-
-Temporada >= Volumen >= CD
-
-Musica tiene:
-* Titulo
-* Genero
-* Interprete
-* Año
-* Formato (CD/Vinilo)
-
-Generar estatisticas a partir de alquileres
-
-Penalizacion por retraso (1€ por cada dia), (5€ por cada dia a partir del 10)
-
-\chapter{Opcional}
-Control de desperfectos.
-Encriptacion contraseñas.
-Mantiene informacion sobre las cuentas.
-Venta de peliculas viejas. Dar de baja peliculas.
-IVA.
-Promociones.
-Dar de baja clientes.
-Puntuaciones
-Reservar
-
-%\section{}
-%\subsection{}
+\section{Maquetas}
+Aqui van unos preciosos dibujicos
 
 \end{document}

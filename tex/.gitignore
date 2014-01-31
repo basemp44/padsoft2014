@@ -1,0 +1,13 @@
+###
+# Ficheros generados por LaTeX
+###
+*.aux # ficheros temporales
+*.dvi # resultado de correr LaTeX
+*.fls # ???
+*.log # logs de la compilacion
+*.pdf # PDFs producidos por PDFLaTeX
+*.toc # tabla de contenidos (temporal)
+
+# No estoy seguro si son todos o he puesto alguno de mas
+# -manu
+
