@@ -1,0 +1,11 @@
+
+
+Documentacion de East Git (descargable con apt-get easygit):
+https://people.gnome.org/~newren/eg/documentation/
+Los comandos son muy similares a usar git a pelo, pero con mas ayuda
+
+Interfaces graficos de git:
+* Git-Cola: http://git-cola.github.io
+* Git-Eye: http://www.collab.net/giteyeapp
+
+
