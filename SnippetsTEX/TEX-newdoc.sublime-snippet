@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[
+\documentclass[${1:a4paper}, ${2:12}pt$3]{${4:article}}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+$5
+
+\begin{titlepage}
+    \author{${6:author}}
+    \title{${7:title}}
+    \date{${8:date}}
+\end{titlepage}
+
+\begin{document}
+	\clearpage\maketitle
+	\thispagestyle{empty}
+	\tableofcontents
+
+	$9$0
+\end{document}]]></content>
+    <tabTrigger>new</tabTrigger>
+    <scope>text.tex.latex</scope>
+    <description>newdoc</description>
+</snippet>
