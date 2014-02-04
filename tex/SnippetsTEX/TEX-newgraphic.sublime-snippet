@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+\includegraphics[width=${1:15}cm, height=${2:15}cm, keepaspectratio]{${3:imagen}.jpg}
+$4$0]]></content>
+    <tabTrigger>newgraphic</tabTrigger>
+    <scope>text.tex.latex</scope>
+    <description>newgraphic</description>
+</snippet>
