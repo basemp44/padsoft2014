@@ -1,0 +1,24 @@
+
+# Commando usado para compilar el .tex
+$pdflatex = "pdflatex %O %S"; 
+
+# Pone el resultado final en la carpeta out/
+$out_dir = "out"; 
+
+# Generamos solo un PDF
+$pdf_mode = 1; $postscript_mode = $dvi_mode = 0;
+
+# Abre un visor de PDF cuando termina de compilar
+$preview_continuous_mode = 1; 
+
+# Para que funcione lo anterior bien
+$pvc_view_file_via_temporary = 1; 
+
+# Para que se visualize el PDF y no el DVI o PS
+$view = "pdf"; 
+
+# Dependencias especiales (METAPOST)
+add_cus_dep('mp', '1', 0, 'mpost');
+sub mpost {
+	return system("mpost $_[0].mp");
+}

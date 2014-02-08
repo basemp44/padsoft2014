@@ -1,0 +1,97 @@
+\section{Introducción}
+\subsection{Propósito del sistema}
+El cliente ha encargado un paquete de software para administrar un videoclub.
+En concreto, se busca automatizar el proceso de gestión de prestamos/devoluciones, proporcionando una interfaz gráfica.
+El propósito de este documento es analizar el problema para ayudarnos a entender la situación, y llegar a un acuerdo con el cliente.
+
+\subsection{Ámbito del sistema}
+El software está dirigido principalmente a los empleados del videoclub.
+El producto final debe permitir efectuar préstamos y devoluciones, y registrar a usuarios nuevos. Lo indispensable en general será:
+\begin{itemize}
+	\item Dar de alta socios. Para ello se le proporcionarán los datos requeridos, ya descritos, y el software devolverá un UID de socio.
+	\item Efectuar préstamos de artículos, prestándolos durante un período de tiempo establecido por el gerente (en principio 3 días). Para ello:
+	\begin{itemize}
+		\item Se solicitará el UID de socio y se verificará tanto su existencia en la base de datos como que disponga de permisos para el préstamo. 
+		\item Se buscará el artículo pedido. Para ello se ingresará el tipo de artículo y se buscará.
+		\item Tras ello, se generará una transacción de compra en la que se seleccionará el tipo de pago, que podrá ser en efectivo o con tarjeta, y el socio deberá abonar el importe.
+	\end{itemize}
+	\item Vender contratos de tarifa plana de 30 días naturales. Un socio podrá comprar contratos de 1, 2 y 3 tipos de artículo distintos, que serán excluyentes para dicho socio. Además se podrá pagar un plus si el usuario quiere tener un día más de tarifa plana.
+	\item Cambiar la disponibilidad de artículos deteriorados.
+	\item Procesar devoluciones, verificando si el artículo a devolver tiene sanción. En caso de tener sanción, el software deberá generar una transacción con el importe a abonar. Hay dos niveles de sanción: sanción a corto plazo (antes de 10 días) y a largo plazo (a partir del día 10), con precios diferentes gestionados por el gestor.
+\end{itemize}
+
+Hemos considerado una serie de caracteristicas --no indispensables-- que pueden aportar valor adicional al producto final:
+\begin{itemize}
+	\item Contabilidad de la caja, quedando registro de todos los trámites en la aplicación. Esta mejora supone poder visualizar estos datos.
+	\item Control de desperfectos. Es conveniente tener las sanciones unificadas en el sistema de devoluciones.
+	\item Dar de baja socios. Los socios deberían poder solicitar que se borren sus datos de carácter personal de la base de datos.
+\end{itemize}
+
+Asimismo, tambien se ha acordado hacer ciertas omisiones en la funcionalidad del software para simplificarlo y reducir gastos.
+\begin{itemize}
+	\item Venta de películas viejas.
+	\item Reservas. Es preferible que se gestionen por otra vía.
+	\item Configuración del IVA. Los precios pueden ser ajustados manualmente y complica la interfaz.
+\end{itemize}
+
+%El fin del programa es que sea usado por los empleados del videoclub para asistirles con su trabajo.
+%El sistema debe estar diseñado con esto en mente. Las labores propias de los empleados, en concreto efectuar préstamos y devoluciones. funcionamiento independiente.
+%El sistema debe permitir controlar el stock y los prÉstamos. Además, debe permitir al gestor del videoclub obtener estadísticas sobre los clientes.
+%El programa final debe ser independiente, y no deberá ser recopilado para añadir peliculas nuevas a la base de datos.
+
+\subsection{Objetivos y criterios de éxito del proyecto}
+El objetivo principal es facilitar la labor de los empleados.
+Se considerara que el software ha alcanzado un nivel de funcionalidad básico cuando se puedan realizar las siguientes tareas dentro de un marco de tiempo razonable.
+\begin{itemize}
+	\item Registrar a un usuario nuevo en la base de datos.
+	\item Efectuar un alquiler, denegando la operación si los datos necesarios no son válidos.
+	\item Reiniciar la aplicación y comprobar que los datos son persistentes entre ejecuciones.
+	\item Efectuar una devolución que lleve un retraso, y calcular correctamente la tasa de atraso.
+\end{itemize}
+
+\subsection{Definiciones, acrónimos y abreviaturas}
+La aplicación debe representar una serie de objetos internamente.
+A continuación estan definidas los campos que forman parte de cada una de las entidades lógicas.
+Estos objetos los definimos como una tupla ordenada de los atributos que lo componen.
+
+\subsubsection{Socios}
+Se debe guardar toda la información necesaria para identificar a los socios, efectuar pagos y ponerse en contacto con ellos. Esta información es confidencial y debería estar guardada de manera segura.
+\begin{description2}
+	\item[UID]              Número de socio, aparecere en los carnéts emitidos (10 dígitos).
+	\item[Nombre]           Nombre y apellidos del socio.
+	\item[DNI/NIE]          Número de DNI completo, o alternativamente el NIE.
+	\item[Dirección]        Dirección completa.
+	\item[Teléfono]         Número de teléfono, móvil o fijo.
+	\item[Email]            Dirección de correo electrónico. \textit{Opcional.}
+\end{description2}
+
+\subsubsection{Películas}
+\begin{description2}
+	\item[Título]           Título de la película.
+	\item[Fecha]            Fecha de publicación.
+	\item[Categorías]       Lista de categorías a las que pertenece.
+	\item[Director]         Nombre del director.
+	\item[Formato]          Formato de la película, puede ser DVD o Bluray.
+	\item[Num. ejemplares]  Número de ejemplares \emph{total}.
+\end{description2}
+
+\subsubsection{Series}
+\begin{description2}
+	\item[Título]           Título completo de la serie.
+	\item[Temporada]        Número de temporada.
+	\item[Categorias]       Lista de categorias a las que pertenece.
+	\item[Volumen]          Número de volumen. 
+	\item[Formato]          Formato de la serie, puede ser DVD o Bluray.
+	\item[Num. ejemplares]  Número de ejemplares \emph{total}.
+\end{description2}
+
+\subsubsection{Música}
+\begin{description2}
+	\item[Título]           Título completo del disco.
+	\item[Géneros]          Géneros musicales a los que pertenece el disco.
+	\item[Interprete]       Lista de interpretes, separada por comas.
+	\item[Año]              Año de publicacion.
+	\item[Formato]          Formato del disco, puede ser CD o vinilo.
+	\item[Num. ejemplares]  Número de ejemplares \emph{total}.
+\end{description2}
+

@@ -3,10 +3,13 @@
 ###
 *.aux # ficheros temporales
 *.dvi # resultado de correr LaTeX
+*.fdb_latexmk # ???
 *.fls # ???
 *.log # logs de la compilacion
 *.pdf # PDFs producidos por PDFLaTeX
+*.synctex.gz # ???
 *.toc # tabla de contenidos (temporal)
+out/*
 
 # No estoy seguro si son todos o he puesto alguno de mas
 # -manu

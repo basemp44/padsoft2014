@@ -1,0 +1,43 @@
+\section{Descripción del sistema}
+\subsection{Requisitos funcionales}
+Se debe hacer una distinción entre los empleados y el gerente del establecimiento.
+Integracion con el SO.
+
+\subsubsection{Tipo de usuario I: Empleado}
+La interfaz de los empleados debe tener, obligatoriamente, al menos los siguientes elementos:
+\begin{itemize}
+	\item Un menú desde el que se pueda escoger el resto de opciones.
+	\item Pantalla para dar de alta y baja socios.
+	\item Pantalla de busqueda.
+	\item Pantalla de pagos.
+	\item Pantalla para hacer préstamos, debe tener búsqueda integrada.
+	\item Pantalla de contratar tarifas VIP.
+	\item Cambiar la disponibilidad de artículos deteriorados.
+	\item Pantalla para devoluciones.
+\end{itemize}
+
+\subsubsection{Tipo de usuario II: Gerente}
+El gerente de la tienda debe poder administrar la tienda desde la aplicación. Para acceder a esta funcionalidad, se debe proporcionar una contraseña. Su interfaz debe contener:
+\begin{itemize}
+	\item Pantalla para modificar los precios de alquiler de todas las categorías.
+	\item Pantalla para crear y eliminar artículos nuevos en la base de datos.
+	\item Visualización de la lista de morosos.
+	\item Visualización de la lista de los articulos más solicidatos (top-ten).
+\end{itemize}
+
+\subsection{Requisitos no funcionales}
+\subsubsection{Portabilidad}
+El cliente puso especial énfasis es que la aplicación debe estar hecha en Java\texttrademark, y funcionar sobre Microsoft Windows\texttrademark.
+
+\subsubsection{Accesibilidad}
+Los empleados de la tienda no tienen por qué tener experiencia con ordenadores, y no deberían necesitar preparación para usar el software.
+
+\subsubsection{Estabilidad}
+El establecimiento maneja un volúmen considerable de alquileres mensualmente. El software debe poder almacenar un volúmen de datos considerable,aproximadamente 10.000 artículos entre las 3 categorias.
+
+Además, el software debe garantizar la integridad de los datos en casos de uso normales.
+En caso de error, el sistema debe manejarlo elegantemente.
+
+
+\subsubsection{Seguridad}
+Debe haber una jerarquía de permisos tal que los empleados no puedan acceder a acciones privilegiadas del gerente.
