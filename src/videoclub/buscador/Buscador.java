@@ -11,6 +11,9 @@ public class Buscador {
 		super();
 	}
 
+	
+	
+	
 	public List<Pelicula> buscarPelicula(String parameter) {
 		// TODO : to implement
 		return null;	
