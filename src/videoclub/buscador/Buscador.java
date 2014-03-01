@@ -10,8 +10,6 @@ public class Buscador {
 	public Buscador(){
 		super();
 	}
-
-	
 	
 	
 	public List<Pelicula> buscarPelicula(String parameter) {
