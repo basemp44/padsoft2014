@@ -1,0 +1,4 @@
+Victor:	articulos usuarios
+Manu:  	socios tarifas logger videoclub
+
+Combo: buscador copias videoclub
