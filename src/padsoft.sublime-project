@@ -1,30 +1,31 @@
 {
 	"folders":
 	[
-		{
-			"name":	"p3/figuras",
-			"path":	"src/es/uam/eps/ads/p3/figuras"
-		},
-		{
-			"name":                   	"p3",
-			"path":                   	"src/es/uam/eps/ads/p3",
-			"folder_exclude_patterns":	["figuras"]
+		/* Todas las carpetas */
+		{ "name": "(V) articulos",	"path": "videoclub/articulos"	},
+		{ "name": "(2) buscador", 	"path": "videoclub/buscador" 	},
+		{ "name": "(2) copias",   	"path": "videoclub/copias"   	},
+		{ "name": "(M) logger",   	"path": "videoclub/logger"   	},
+		{ "name": "(M) socios",   	"path": "videoclub/socios"   	},
+		{ "name": "(M) tarifas",  	"path": "videoclub/tarifas"  	},
+		{ "name": "(V) usuarios", 	"path": "videoclub/usuarios" 	},
+		{ "name": "(2) videoclub",	"path": "videoclub/",
+		                          	"folder_exclude_patterns":	["*"]
 		}
 	],
 
 	"settings":
-	{
-		/* esto es JAVA */
-		"tab_size": 4,
-		"translate_tabs_to_spaces": true,
-		"use_tab_stops": true
+	{	/* Oppa Java style */
+	 	"tab_size":                	4,
+	 	"translate_tabs_to_spaces":	true,
+	 	"use_tab_stops":           	true
 	},
 
 	"build_systems":
 	[
 		{
-			"name":       	"Compilar ADSOFT",
-			"shell_cmd":  	"bash -c 'ant test'",
+			"name":       	"Compilar PADSOFT",
+			"shell_cmd":  	"bash -c 'ant compile'",
 			"file_regex": 	"^ *\\[javac\\] (.+):([0-9]+):() (.*)$",
 			"working_dir":	"${project_path:${folder}}",
 			"selector":   	"source.java"
