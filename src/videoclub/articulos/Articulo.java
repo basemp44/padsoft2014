@@ -12,20 +12,20 @@ public abstract class Articulo {
 	private String titulo;
 	private Set<String> categoria;
 	private int vecesPrestado;
-	
+
 	private Set<Copia> copia;
 
-	
+
 	public Articulo() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Copia nuevaCopia() {
-		return new Copia();	
+		return new Copia();
 	}
-	
+
 	public Copia getCopiaDisponible() {
-		return new Copia();	
+		return new Copia();
 	}
 
 }

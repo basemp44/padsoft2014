@@ -1,0 +1,33 @@
+{
+	"folders":
+	[
+		{
+			"name":	"p3/figuras",
+			"path":	"src/es/uam/eps/ads/p3/figuras"
+		},
+		{
+			"name":                   	"p3",
+			"path":                   	"src/es/uam/eps/ads/p3",
+			"folder_exclude_patterns":	["figuras"]
+		}
+	],
+
+	"settings":
+	{
+		/* esto es JAVA */
+		"tab_size": 4,
+		"translate_tabs_to_spaces": true,
+		"use_tab_stops": true
+	},
+
+	"build_systems":
+	[
+		{
+			"name":       	"Compilar ADSOFT",
+			"shell_cmd":  	"bash -c 'ant test'",
+			"file_regex": 	"^ *\\[javac\\] (.+):([0-9]+):() (.*)$",
+			"working_dir":	"${project_path:${folder}}",
+			"selector":   	"source.java"
+		}
+	]
+}
