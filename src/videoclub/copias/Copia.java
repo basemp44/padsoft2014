@@ -11,7 +11,7 @@ public class Copia {
 	private EstadoCopia estado;
 	private Date fechaInicio;
 	private int duracion;
-	
+
 	public Socio socio;
 	public Articulo articulo;
 
@@ -21,23 +21,23 @@ public class Copia {
 
 	public int retraso() {
 		// TODO : to implement
-		return 0;	
+		return 0;
 	}
 
 	public void cancelar() {
-		// TODO : to implement	
+		// TODO : to implement
 	}
 
 	public void devolver() {
-		// TODO : to implement	
+		// TODO : to implement
 	}
 
 	public void incidente() {
-		// TODO : to implement	
+		// TODO : to implement
 	}
 
 	public void prestar(Socio soc) {
-		// TODO : to implement	
+		// TODO : to implement
 	}
-	
 }
+

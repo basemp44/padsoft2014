@@ -34,7 +34,7 @@ public class Socio {
 
 	/* Fecha en la que contrato la ultima tarifa */
 	private Date fechaContratacion;
-	/* Tarifa activa del socio (si existe) */
+	/* Ultima tarifa contratada por el socio */
 	public Tarifa tarifa;
 
 	/* Lista de copias que tiene el socio */
@@ -69,8 +69,29 @@ public class Socio {
 	 * ================================
 	 */
 
-	public Tarifa tarifaActiva() {
+	/**
+	 * Devuelve un booleano indicando si el socio es moroso.
+	 * Para ello, debe iterar a traves de todos sus prestamos.
+	 * @return Booleano
+	 */
+	public boolean esMoroso() {
+		for (Copia copia : this.copias) {
+			if (copia.tieneRetraso()) return true;
+		}
+		return true;
+	}
+
+	/**
+	 * Devuelve la tarifa activa del socio.
+	 * Solo cuando se llama a esta funcion se comprueba si la
+	 * tarifa ha expirado. Esta funcion no debe ser llamada muy a menudo.
+	 * @return Tarifa
+	 */
+	public Tarifa getTarifa() {
 		Date now = new Date();
+		/* !!TEMPORAL!! */
+		if (now > fechaContratacion + tarifa.getDuracion()) return null;
+		return this.tarifa;
 	}
 
 	public List<Copia> obtenerPrestamos() {
