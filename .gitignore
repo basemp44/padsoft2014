@@ -5,7 +5,8 @@
 *.war
 *.ear
 
-# Vim files
+# Vim & gedit files
 .*.swp
+*~
 
 /bin
