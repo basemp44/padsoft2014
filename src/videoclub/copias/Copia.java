@@ -15,7 +15,7 @@ public class Copia {
 	public Socio socio;
 	public Articulo articulo;
 
-	public Copia(){
+	public Copia(String formato){
 		super();
 	}
 
