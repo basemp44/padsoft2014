@@ -6,6 +6,7 @@ import videoclub.articulos.Articulo;
 import videoclub.socios.Socio;
 
 public class Copia {
+	/*Aqui*/
 	private String id;
 	private String observaciones;
 	private EstadoCopia estado;
